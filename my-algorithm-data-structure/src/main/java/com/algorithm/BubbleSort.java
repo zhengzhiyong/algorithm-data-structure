@@ -22,7 +22,7 @@ public class BubbleSort {
 
     @Test
     public void test1(){
-         int [] array = {3,5,2,9,8,6,7,4,1};
+        int [] array = {3,5,2,9,8,6,7,4,1};
         int temp = 0;
         int length = array.length;
         for (int i = 0;i<length-1;i++){
