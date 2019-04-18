@@ -176,8 +176,8 @@ public class Exercises {
      */
     @Test
     public void test6(){
-        Scanner s = new Scanner(System.in);
         System.out.println("请输入一个字符串");
+        Scanner s = new Scanner(System.in);
         String str = s.next();
         System.out.println(str.length());
     }
@@ -203,29 +203,94 @@ public class Exercises {
      * 第二只猴子把剩下的桃子又平均分成五份，又多了一个，它同样把多的一个扔入海中，拿走了一份，
      * 第三、第四、第五只猴子都是这样做的，问海滩上原来最少有多少个桃子？
      */
+    class MonkeyPeaches {
+        //桃子总数
+        int ts = 0;
+        //分桃子的次数
+        int fs = 1;
+        //猴子的数量
+        int hs = 5;
+        //桃子数的取值范围
+        int tsscope = 5000;
+        public int test8(int t) {
+            if (t == tsscope) {
+                //当桃子数量达到最大到时候取消递归
+                System.out.println("结束");
+                return 0;
+            } else {
+                if ((t - 1) % hs == 0 && fs <= hs) {
+                    if (fs == hs) {
+                        System.out.println("桃子数为" + ts + "时，满足猴子分桃");
+                    }
+                    fs += 1;
+                    return test8((t - 1) / 5 * 4);
+                } else {
+                    //没满足条件时候，将分的次数重置为1
+                    fs = 1;
+                    return test8(ts += 1);
+                }
+            }
+        }
+    }
+
+    @Test
     public void test8(){
-        int count = 0;
-        int
+       new Exercises().new MonkeyPeaches().test8(0);
     }
-
-    public int test8_a(){
-        return 0;
-    }
-
     /**
      * 8.新浪面试题：编写一个方法，计算一个字符串中，第一个不重复的字符在当前字符串中的索引。
      * 分析 ： 编写一个方法，计算一个字符串中，第一个不重复 的字符在当前字符串中的索引。
      */
-    public void test9(){
+    class FirstRepeat{
+        public int test9(String str){
+            int len = str.length();
+            char curch ;
+            char nextch;
+            for (int i = 0; i < len; i++) {
+                curch = str.charAt(i);
+                for (int j = 0; j < len; j++) {
+                    nextch = str.charAt(j);
+                    if (curch == nextch && i != j){
+                        if (i == j+1){
+                            i++;
+                        }
+                        break;
+                    }else{
+                        if (j==len-1){
+                            return  i;
+                        }
+                    }
+                }
+            }
+            return 0;
+        }
 
+
+    }
+    @Test
+    public void test9(){
+        String str = "abc123bcd21";
+        int i = new FirstRepeat().test9(str);
+        System.out.println(i);
     }
 
     /**
      * 9.题目：求一个3*3矩阵对角线元素之和
      * 1.程序分析：利用双重for循环控制输入二维数组，再将a[i][i]累加后输出。
+     * 其实就是要求[1][1]、[2][2]、[3][3]对应数字之和
      */
+    @Test
     public void test10(){
-
+        int count = 0;
+        int array[][]= {{1,2,3},{4,5,6},{7,8,9}};
+        for (int j = 0; j < 3; j++) {
+            for (int k = 0; k < 3; k++) {
+                if (j == k){
+                  count = count + array[j][k];
+                }
+            }
+        }
+        System.out.println(count);
     }
 
 
@@ -233,7 +298,17 @@ public class Exercises {
      * 10.题目：打印出所有的 "水仙花数 "，所谓 "水仙花数 "是指一个三位数，其各位数字立方和等于该数本身。
      * 例如：153是一个 "水仙花数 "，因为153=1的三次方＋5的三次方＋3的三次方。
      */
+    @Test
     public void test11(){
+        int b1,b2,b3;
+        for (int i = 101; i < 1000; i++) {
+            b3 = i /100;
+            b2 = i % 100 / 10;
+            b1 = i % 10;
 
+            if (b3*b3*b3 + b2*b2*b2 + b1 * b1 *b1 == i){
+                System.out.println(i+"是一个水仙花数");
+            }
+        }
     }
 }
