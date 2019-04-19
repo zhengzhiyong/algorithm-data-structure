@@ -9,8 +9,6 @@ import org.junit.Test;
  * 否则序列中没有待查的关键字。
  */
 public class BinarySearch {
-    public int [] array = {1,3,5,7,8,10,12,15,17,25,35,45};
-
     /**
      * 非递归代码 方式
      * @param array 待检索的数组
@@ -88,15 +86,71 @@ public class BinarySearch {
 
     @Test
     public void test1(){
+        int [] array = {1,3,5,7,8,10,12,15,17,25,35,45};
+
        int index = search(array,45);
-       System.out.println(index);
+       System.out.println("45在数组出现的位置是："+index);
 
 
        int index2 = search2(array,45,0,array.length-1);
-       System.out.println(index2);
+        System.out.println("45在数组出现的位置是："+index);
 
 
        int index3 = search3(array,45);
-       System.out.println(index3);
+        System.out.println("45在数组出现的位置是："+index);
+    }
+
+
+    /**
+     *
+     * @param array 待查找的数组
+     * @param key 待查找的元素
+     * @return 如果找到则返回待查找的元素在待查找的数组中第一次出现的位置，如果没有找到则返回-1
+     */
+    public int firstIndexSearch(int[] array,int key){
+        int length = array.length;
+        int min = 0;
+        int max = length -1;
+        int mid = 0;
+        while (min < max){
+            mid = (min + max)/2;
+            if (key > array[mid]){
+                min = mid + 1;
+            }else {
+                max = mid;
+            }
+        }
+        return array[min] != key ? -1: min;
+    }
+
+    /**
+     *
+     * @param array 待查找的数组
+     * @param key 待查找的元素
+     * @return 如果找到则返回待查找的元素在待查找的数组中最后一次出现的位置，如果没有找到则返回-1
+     */
+    public int lastIndexSearch(int[] array,int key){
+        int length = array.length;
+        int min = 0;
+        int max = length -1;
+        int mid = 0;
+        while (min < max){
+            mid = (min + max +1) /2;
+            if (array[mid]<=key){
+                min = mid;
+            }else {
+                max = mid - 1;
+            }
+        }
+        return array[min]!=key?-1:max;
+    }
+
+    @Test
+    public void test2(){
+        int [] array2 = {1,1,1,3,3,5,7,8,10,10,10,12,12,15,15,17,17,17,17,25,35,35,35,35,45,45,45,45};
+        int firstIndex = firstIndexSearch(array2,17);
+        int lastIndex = lastIndexSearch(array2,17);
+        System.out.println("17在数组中第一次出现的位置为："+firstIndex);
+        System.out.println("17在数组中最后一次出现的位置为："+lastIndex);
     }
 }
