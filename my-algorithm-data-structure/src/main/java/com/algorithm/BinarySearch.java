@@ -88,15 +88,15 @@ public class BinarySearch {
 
     @Test
     public void test1(){
-       int index = search(array,15);
+       int index = search(array,45);
        System.out.println(index);
 
 
-       int index2 = search2(array,15,0,array.length);
+       int index2 = search2(array,45,0,array.length-1);
        System.out.println(index2);
 
 
-       int index3 = search3(array,15);
+       int index3 = search3(array,45);
        System.out.println(index3);
     }
 }
