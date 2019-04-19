@@ -93,11 +93,11 @@ public class BinarySearch {
 
 
        int index2 = search2(array,45,0,array.length-1);
-        System.out.println("45在数组出现的位置是："+index);
+        System.out.println("45在数组出现的位置是："+index2);
 
 
        int index3 = search3(array,45);
-        System.out.println("45在数组出现的位置是："+index);
+        System.out.println("45在数组出现的位置是："+index3);
     }
 
 
