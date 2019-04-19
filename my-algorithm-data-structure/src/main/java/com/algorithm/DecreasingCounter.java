@@ -45,14 +45,14 @@ public class DecreasingCounter {
     public int test1(int n){
         //计算出第n个分片的长度
         int length = (int)Math.pow(2,(n-1))*3;
-        System.out.println("计算出第"+n+"个分片的长度："+length);
+
+        //System.out.println("计算出第"+n+"个分片的长度："+length+",该分片的最大值为："+length+" 最小值为1,开始时间为："+(length-2)+",结束时间为："+((length-2)+(length-1)));
         int count = 0;
         for (int i = 1; i <= n; i++) {
             count = count + (int)Math.pow(2,(i-1))*3;
         }
-        System.out.println("计算出前"+n+"个分片的总共长度："+count);
-        System.out.println("计算第"+n+"个分片的【t+v="+(count+1)+"】");
-        return  count +1;
+        //System.out.println("计算出前"+n+"个分片的总共长度："+count);
+        return  count+1;
     }
 
     /**
@@ -61,23 +61,28 @@ public class DecreasingCounter {
      * @param num 需要比较的数字
      * @return 返回num所在的分片数
      */
-    public int test2(int t,int num){
-        if (Math.pow(2,t-1)*3<num){
+    public int test2(int t,final int num){
+        int count = 0;
+        for (int i = 1; i <= t; i++) {
+            count = count + (int)Math.pow(2,(i-1))*3;
+        }
+        if (count<num){
             return test2(t += 1,num);
         }else {
             return t<=1?1:t;
         }
     }
 
-    public void test3(int num){
-      int t = test2(1,num);
-      System.out.println("数字"+num+"在第"+t+"个分片上");
-      int tvCount = test1(t);
+    public void test3(final int num){
+        int t = test2(1,num);
+        //System.out.println("数字"+num+"在第"+t+"个分片上");
+        int tvCount = test1(t);
         System.err.println("第"+num+"秒，显示的值为："+(tvCount - num));
     }
+
     @Test
     public void test4(){
-        test3(94);
+            test3(92);
     }
 
 }
