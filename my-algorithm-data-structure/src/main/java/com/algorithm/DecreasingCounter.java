@@ -3,7 +3,7 @@ package com.algorithm;
 import org.junit.Test;
 
 /**
- * 奇怪的计数器(建议时间复杂度O(logn),空间复杂度O(1)) *
+ *  奇怪的计数器(建议时间复杂度O(logn),空间复杂度O(1)) *
  *  BOb 有一个奇怪的计数器，在第一秒它显示的数字为3，之后每隔一秒计数器显示的数字都会减一，直到1为止。
  *  计数器的衰减是循环的，减到1之后的下一秒，计数器会重置成2乘以前一个循环的初始值，然后每隔一秒开始衰减。
  *  如图所示:doc/DecreasingCounter.jpg
@@ -23,19 +23,6 @@ import org.junit.Test;
  *  10   11  12   13   14   15   16    17    18    19    20    21
  */
 public class DecreasingCounter {
-    /**
-     * @param t 时间，第 t 秒
-     * @return  返回 第t秒显示的值
-     */
-    public long  strangeCounter(int t){
-        if (t<=3){
-            return (4 - t);
-        }else {
-
-            return 0;
-        }
-    }
-
 
     /**
      * 返回第n个分片t+v的值，每个分片的t+v是一个固定值
@@ -82,7 +69,7 @@ public class DecreasingCounter {
 
     @Test
     public void test4(){
-            test3(92);
+         test3(92);
     }
 
 }
