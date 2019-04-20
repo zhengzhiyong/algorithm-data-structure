@@ -60,7 +60,6 @@ public class Exercises {
         String strs [] = {"红","黄","蓝","红","黄","蓝","红","黄","蓝"};
         String colors [] = {"红","黄","蓝"};
         orderColorBalls(strs,colors,0,0);
-
         for (int i = 0; i < strs.length; i++) {
             System.out.println(strs[i]);
         }
@@ -107,7 +106,6 @@ public class Exercises {
         long b =  18745678;
         a = (int)Math.floor(b%Math.pow(10,7)/Math.pow(10,3));
         System.out.println(a);
-
         System.out.println(Math.pow(10,7));
         System.out.println(Math.pow(10,3));
         System.out.println(b%Math.pow(10,7)/Math.pow(10,3));
@@ -164,7 +162,6 @@ public class Exercises {
                 }
             }
         }
-
         for (int i = 0; i < arrays.length; i++) {
             System.out.println(arrays[i]);
         }
@@ -194,7 +191,6 @@ public class Exercises {
         for (int i = 0; i < list.size(); i++) {
             System.out.println(list.get(i));
         }
-
     }
 
     /**
@@ -263,8 +259,6 @@ public class Exercises {
             }
             return 0;
         }
-
-
     }
     @Test
     public void test9(){
@@ -304,7 +298,6 @@ public class Exercises {
             b3 = i /100;
             b2 = i % 100 / 10;
             b1 = i % 10;
-
             if (b3*b3*b3 + b2*b2*b2 + b1 * b1 *b1 == i){
                 System.out.println(i+"是一个水仙花数");
             }

@@ -2,6 +2,8 @@ package com.algorithm;
 
 import org.junit.Test;
 
+import java.util.stream.IntStream;
+
 /**
  * 题目参考：
  */
@@ -23,13 +25,8 @@ public class SuperNum {
 
 
     public int superDigit2(final int superNum,final int k){
-        if (superNum<Double.NEGATIVE_INFINITY){
-
-        }
         StringBuilder stringBuilder = new StringBuilder();
-        for (int i = 0; i < k; i++) {
-            stringBuilder.append(String.valueOf(superNum));
-        }
+        IntStream.range(0,k).forEach(i -> stringBuilder.append(String.valueOf(superNum)));
         int superNumP = Integer.valueOf(stringBuilder.toString());
         return superDigit(superNumP);
     }

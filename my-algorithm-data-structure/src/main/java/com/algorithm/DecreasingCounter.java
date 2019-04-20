@@ -31,8 +31,7 @@ public class DecreasingCounter {
      */
     public int test1(int n){
         //计算出第n个分片的长度
-        int length = (int)Math.pow(2,(n-1))*3;
-
+        //int length = (int)Math.pow(2,(n-1))*3;
         //System.out.println("计算出第"+n+"个分片的长度："+length+",该分片的最大值为："+length+" 最小值为1,开始时间为："+(length-2)+",结束时间为："+((length-2)+(length-1)));
         int count = 0;
         for (int i = 1; i <= n; i++) {
@@ -69,7 +68,7 @@ public class DecreasingCounter {
 
     @Test
     public void test4(){
-         test3(92);
+        test3(92);
     }
 
 }

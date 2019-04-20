@@ -15,7 +15,10 @@ public class BinarySearch {
      * @param key 待查找的元素
      * @return 待查找元素在数组中的索引位置，未找到返回-1
      */
-    public int search(int[] array,int key){
+    private int search(int[] array,int key){
+        if(array.length==0){
+            return -1;
+        }
         int min = 0;
         int max = array.length - 1;
         int mid = 0;
@@ -45,7 +48,10 @@ public class BinarySearch {
      * @param max 要查找的区间对应索引的最大值
      * @return 待查找元素在数组中的索引位置，未找到返回-1
      */
-    public int search2(int[] array,int key,int min,int max){
+    private int search2(int[] array,int key,int min,int max){
+        if (array.length==0){
+            return -1;
+        }
         if (min>max){
             return -1;
         }
@@ -65,7 +71,10 @@ public class BinarySearch {
      * @param key 待查找的元素
      * @return 待查找元素在数组中的索引位置，未找到返回-1
      */
-    public int search3(int[] array,int key){
+    private int search3(int[] array,int key){
+        if (array.length==0){
+            return -1;
+        }
         int min = 0;
         int max = array.length-1;
         int mid = (max + min)/2;
@@ -86,18 +95,16 @@ public class BinarySearch {
 
     @Test
     public void test1(){
-        int [] array = {1,3,5,7,8,10,12,15,17,25,35,45};
+       int [] array = {1,3,5,7,8,10,12,15,17,25,35,45};
 
        int index = search(array,45);
        System.out.println("45在数组出现的位置是："+index);
 
-
        int index2 = search2(array,45,0,array.length-1);
-        System.out.println("45在数组出现的位置是："+index2);
-
+       System.out.println("45在数组出现的位置是："+index2);
 
        int index3 = search3(array,45);
-        System.out.println("45在数组出现的位置是："+index3);
+       System.out.println("45在数组出现的位置是："+index3);
     }
 
 
@@ -107,8 +114,11 @@ public class BinarySearch {
      * @param key 待查找的元素
      * @return 如果找到则返回待查找的元素在待查找的数组中第一次出现的位置，如果没有找到则返回-1
      */
-    public int firstIndexSearch(int[] array,int key){
+    private int firstIndexSearch(int[] array,int key){
         int length = array.length;
+        if (length==0){
+            return -1;
+        }
         int min = 0;
         int max = length -1;
         int mid = 0;
@@ -129,8 +139,11 @@ public class BinarySearch {
      * @param key 待查找的元素
      * @return 如果找到则返回待查找的元素在待查找的数组中最后一次出现的位置，如果没有找到则返回-1
      */
-    public int lastIndexSearch(int[] array,int key){
+    private int lastIndexSearch(int[] array,int key){
         int length = array.length;
+        if (length==0){
+            return -1;
+        }
         int min = 0;
         int max = length -1;
         int mid = 0;
