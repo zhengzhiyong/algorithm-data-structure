@@ -383,6 +383,11 @@ public class NumberSortAll {
 //        IntStream.range(0,array.length).forEach(i -> list.add(new Integer(array[i])));
 //        ArrayList<Integer> arrays = bucketSort(list,array.length-1);
 //        arrays.stream().forEach(i -> System.out.println(i));
+
+//        int[] temp = Arrays.copyOf(array,2);
+//        int[] temp2 = Arrays.copyOfRange(array,0,2);
+//        IntStream.range(0,temp.length).forEach(i -> System.out.println(temp[i]));
+//        IntStream.range(0,temp2.length).forEach(i -> System.out.println(temp2[i]));
     }
 
 
