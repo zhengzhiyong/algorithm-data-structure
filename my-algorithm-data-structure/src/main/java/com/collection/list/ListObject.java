@@ -72,7 +72,7 @@ public class ListObject {
 
 
         int [] arrays2 = new int[] {1,2,3,4,5,6,7,8,9};
-        ListObject.Array array = new ListObject().new Array(arrays2);;
+        ListObject.Array array = new ListObject().new Array(arrays2);
         array.remove(3);
         IntStream.range(0,array.array.length).forEach(i -> System.out.print(array.array[i]));
     }
