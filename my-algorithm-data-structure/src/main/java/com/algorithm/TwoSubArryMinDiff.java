@@ -83,14 +83,19 @@ public class TwoSubArryMinDiff {
         minDiff(array1,array2);
     }
 
+    public static void split(){
+        System.out.println("abc.abc.abc".split("\\.").length);
+        System.out.println("abc.abc.abc".split(".").length);
+        System.out.println("abc|abc|abc".split("\\|").length);
+        System.out.println("abc|abc|abc".split("|").length);
+    }
+
     public static void main(String[] args) {
         int[] array1 = new int[]{1,10,20,40};
         int[] array2 = new int[]{80,200,1000,2000};
-//        System.out.println("============================");
         minDiff(array2,array1);
-//        System.out.println("============================");
-//        int[] array = megerArrays(array1,array2);
-//        getTwoSubArrayMinDiff(array);
+        //int[] array = megerArrays(array1,array2);
+        //getTwoSubArrayMinDiff(array);
     }
 }
 
