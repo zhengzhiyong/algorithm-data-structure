@@ -1,9 +1,6 @@
 package com.algorithm;
 
-import org.junit.Test;
-
 import java.util.Arrays;
-import java.util.Scanner;
 import java.util.stream.IntStream;
 
 public class TwoSubArryMinDiff {
